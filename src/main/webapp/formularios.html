@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="formularios.css">
+
+    <title>Página de cadastro</title>
+</head>
+
+<body>
+
+    <!-- Lado direito -->
+    <div class="lado-esquerdo">
+        <div>
+            <h1>Faça parte da transformação.</h1>
+        </div>
+
+        <div class="botao">
+            <button id="btn_vol" onclick="formvol()">Cadastro de voluntários</button>
+       
+            <button id="btn_inst" onclick="forminst()">Cadastro de instituição</button>
+        </div><br>
+
+        <a href="index.html">Home</a>
+
+    </div>
+    <!-- FIM Lado direito -->
+
+    <div class="lado-direito off">
+        <form id="form_vol" action="/ConectaMais/criarVoluntarios" method="post" class="voluntario off">
+            <div class="input span14">
+                <h1>Cadastro de voluntários</h1>
+            </div>
+
+            <div class="input span14">
+                <h4>Dados pessoais</h4>
+            </div>
+            <div class="input span13">
+                <label for="nome">Nome</label>
+                <input name="nome_voluntario" type="text" id="nome" placeholder="Nome completo">
+            </div>
+
+            <div class="input">
+                <label for="datanascimento">Data de nascimento</label>
+                <input name="dataAniv" type="text" name="datanascimento" id="datanascimento" placeholder="dd/mm/aaaa">
+            </div>
+
+            <div class="input">
+                <label for="cep">Cep</label>
+                <input name="cep_voluntario" type="text" id="cep" placeholder="CEP">
+            </div>
+
+
+            <div class="input span24">
+                <label for="endereco">Endereço</label>
+                <input name="logradouro_voluntario" type="text" id="endereco" placeholder="Rua Exemplo, 123">
+            </div>
+
+            <div class="input">
+                <label for="cidade">Cidade</label>
+                <input name="cidade_voluntario" type="text" id="cidade" placeholder="Cidade">
+            </div>
+
+            <div class="input">
+                <label for="estado">Estado</label>
+                <input name="estado_voluntario" type="text" id="estado" placeholder="Estado">
+            </div>
+
+            <div class="input">
+                <label for="telefone">Telefone</label>
+                <input name="telefone_voluntario" type="text" id="telefone" placeholder="(XX) XXXX-XXXX">
+            </div>
+
+            <div class="input span14">
+                <label for="formacao">Formação</label>
+                <select name="formacao" id="formacao">
+                    <option value=""></option>
+                    <option value="Ensino fundamental incompleto">Ensino fundamental incompleto</option>
+                    <option value="Ensino fundamental completo">Ensino fundamental completo</option>
+                    <option value="Ensino médio incompleto">Ensino médio incompleto</option>
+                    <option value="Ensino médio completo">Ensino médio completo</option>
+                    <option value="Ensino superior cursando">Ensino superior cursando</option>
+                    <option value="Ensino superior incompleto">Ensino superior incompleto</option>
+                    <option value="Ensino superior completo">Ensino superior completo</option>
+                </select>
+            </div>
+
+            <div class="input span14">
+                <label for="sobre">Sobre</label>
+                <textarea name="sobre_voluntario" id=""
+                    placeholder="Fale mais sobre você, suas experiências, como pretende atuar na instituição etc."></textarea>
+            </div>
+
+            <div class="input span14">
+                <h4>Dados de login</h4>
+            </div>
+
+            <div class="input span14">
+                <label for="email">Email</label>
+                <input name="email_voluntario" type="text" id="email" placeholder="Email">
+            </div>
+
+            <div class="input span14">
+                <label for="senha">Senha</label>
+                <input name="senha" type="password" id="senha" placeholder="Senha">
+            </div>
+
+            <div class="input span14">
+                <button name="act" type="submit" value="btn_vol" type="submit">Enviar</button>
+            </div>
+        </form>
+        <!-- FIM formulário de voluntário -->
+
+
+        <!-- Formulário de instituição de ensino -->
+        <form action="/ConectaMais/criarInstituicaoEnsino" method="post" id="form_inst" class="instituicao off">
+            <div class="input span14">
+                <h1>Cadastro de instituição de ensino</h1>
+            </div>
+
+            <div class="input span14">
+                <h4>Dados da instituição</h4>
+            </div>
+
+            <div class="input span14">
+                <label for="nomedainstituicao">Nome da instituição de ensino</label>
+                <input name="nome" type="text" id="nomedainstituicao">
+            </div>
+
+
+            <div class="input">
+                <label for="cep">Cep</label>
+                <input name="cep" type="text" id="cep">
+            </div>
+
+
+            <div class="input span24">
+                <label for="endereco">Endereço</label>
+                <input name="logradouro" type="text" id="endereco">
+            </div>
+
+            <div class="input">
+                <label for="cidade">Cidade</label>
+                <input name="cidade" type="text" id="cidade">
+            </div>
+
+            <div class="input">
+                <label for="estado">Estado</label>
+                <input name="estado" type="text" id="estado">
+            </div>
+
+            <div class="input">
+                <label for="telefone">Telefone</label>
+                <input name="telefone" type="text" id="telefone">
+            </div>
+
+            <div class="input span13">
+                <label for="categoria">Categoria/Área de atuação</label>
+                <select name="categoria" id="formacao">
+                    <option value=""></option>
+                    <option value="Ensino básico público">Ensino básico público</option>
+                    <option value="Ensino básico particular">Ensino básico particular</option>
+                    <option value="Ensino superior público">Ensino superior público</option>
+                    <option value="Ensino superior particular">Ensino superior particular</option>
+                    <option value="Ensino técnico">Ensino técnico</option>
+                </select>
+            </div>
+
+            <div class="input">
+                <label for="nalunos">Quantidade de alunos</label>
+                <input name="qtd_alunos" type="text" id="nalunos">
+            </div>
+
+            <div class="input span14">
+                <label for="sobre">Sobre</label>
+                <textarea name="sobre" id=""></textarea>
+            </div>
+
+            <div class="input span14">
+                <h4>Dados de login</h4>
+            </div>
+
+            <div class="input span14">
+                <label for="email">Email</label>
+                <input type="email" name="email_ie" id="email">
+            </div>
+
+            <div class="input span14">
+                <label for="senha">Senha</label>
+                <input type="password" name="senha_ie" id="senha">
+            </div>
+
+            <div class="input span14">
+                <h4>Dados do representante da instituição</h4>
+            </div>
+
+            <div class="input span14">
+                <label for="nomerepresentante">Nome</label>
+                <input name="nome_contato" type="text" id="nomerepresentante" placeholder="Nome do representante">
+            </div>
+
+            <div class="input span13">
+                <label for="emailrepresentante">Email para contato</label>
+                <input name="email_contato" type="email" name="emailrepresentante" id="emailrepresentante"
+                    placeholder="Email do representante">
+            </div>
+
+            <div class="input">
+                <label for="telefonerepresentante">Telefone</label>
+                <input name="telefone_contato" type="text" id="telefone" placeholder="Telefone do representante">
+            </div>
+
+            <div class="input span14">
+                <button name="act" value="btn_inst" type="submit" class="botao">Enviar</button>
+            </div>
+        </form>
+    </div>
+    <!-- Formulário de instituição de ensino -->
+
+    <script src="formularios.js"></script>
+</body>
+
+</html>
